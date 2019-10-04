@@ -1,1 +1,303 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+}
+
+body.mnx-dark {
+    background: #202124;
+}
+
+.mnx-body {
+    font-family: Roboto, 'sans-serif';
+}
+
+.mnx-content {
+    max-width: 980px;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 48px;
+    margin: 0 auto;
+}
+
+/* START OF CHIP */
+
+.mnx-chip-set {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-left: -4px;
+}
+
+.mnx-chip {
+    margin: 4px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    align-items: center;
+    display: flex;
+}
+
+.mnx-chip.mnx-chip--active {
+    background-color: rgba(0, 0, 0, .07);
+}
+
+.mnx-chip--selectable {
+    cursor: pointer;
+}
+
+.mnx-chip--selectable:hover:not(.mnx-chip--active) {
+    background-color: rgba(0, 0, 0, .03);
+}
+
+.mnx-chip--padded {
+    margin-right: 16px;
+}
+
+/* END OF CHIP */
+
+/* START OF LIST */
+
+.mnx-list {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0.00937em;
+    color: rgba(0, 0, 0, 0.87);
+    margin: 0;
+    padding: 8px 0;
+    line-height: 1.5rem;
+    list-style-type: none;
+}
+
+.mnx-list--two-line .mnx-list-item {
+    height: 60px;
+}
+
+.mnx-list-item {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    height: 48px;
+    padding: 0 16px;
+    overflow: hidden;
+}
+
+.mnx-list-item__text {
+    flex-basis: 100%;
+}
+
+.mnx-list-item__text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.mnx-list-item__primary-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    line-height: normal;
+    display: block;
+}
+
+.mnx-list-item__secondary-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.01786em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    margin-top: 0;
+    display: block;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.mnx-list-item__trailing {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+}
+
+
+
+
+
+/* START OF GRID */
+
+.mnx-grid {
+
+}
+
+.mnx-grid--4 {
+    width: calc(100% / 3);
+    display: inline-block;
+}
+
+
+/* START OF TYPOGRAPHY */
+
+.mnx-typography--caption {
+    color: rgba(0, 0, 0, .32);
+    font-size: 14px;
+}
+
+.mnx-typography--heading1 {
+    color: rgba(0, 0, 0, .87);
+    font-size: 28px;
+    padding: 8px 0;
+}
+
+/* START OF BUTTON */
+
+.mnx-button {
+    font-size: 12px;
+    line-height: 2.25rem;
+    letter-spacing: 0.08929em;
+    padding: 0 8px 0 8px;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 64px;
+    height: 24px;
+    border: none;
+    outline: none;
+    line-height: inherit;
+    overflow: hidden;
+    vertical-align: middle;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #929299;
+    background: transparent;
+}
+
+.mnx-button:hover {
+    background: rgba(0, 0, 0, .07);
+}
+
+.mnx-button.mnx-button--raised {
+    background: #009688;
+    color: #fff;
+    height: 32px;
+    padding: 0 12px;
+}
+
+.mnx-button.mnx-button--raised:hover {
+    background: #09a596;
+}
+
+/* Custom Styling for other components */
+
+
+.credit__color:not(.credit__color-font) {
+    background: #ec5756;
+}
+
+.credit__color-font {
+    color: #ec5756;
+}
+
+.debit__color:not(.debit__color-font) {
+    background: #2bd0a2;
+}
+
+.debit__color-font {
+    color: #2bd0a2;
+}
+
+
+/* START OF DIALOG */
+
+.mnx-dialog,
+.mnx-dialog__scrim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.mnx-dialog__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    box-sizing: border-box;
+    margin-top: 10%;
+}
+
+.mnx-dialog .mnx-dialog__surface {
+    max-height: calc(100vh - 32px);
+    max-width: 560px;
+    min-width: 280px;
+    background-color: #fff;
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    z-index: 500;
+    border-radius: 16px;
+}
+
+.mnx-dialog .mnx-dialog__scrim {
+    background-color: rgba(0, 0, 0, 0.32);
+}
+
+.mnx-dialog__title {
+    display: block;
+    margin-top: 0;
+    line-height: normal;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.0125em;
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 24px 8px 0 24px;
+    border-bottom: 1px solid transparent;
+}
+
+.mnx-dialog__content {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.03125em;
+    flex-grow: 1;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px 24px;
+    overflow: auto;
+}
+
+.mnx-dialog__actions {
+    display: flex;
+    position: relative;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    min-height: 52px;
+    margin: 0;
+    padding: 24px;
+    border-top: 1px solid transparent;
+}

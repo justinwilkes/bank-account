@@ -1,0 +1,59 @@
+<div *ngIf="shallShow" class="transaction" [class.debit]="isDebit" [class.credit]="isCredit">
+  <ul class="mnx-list mnx-list--two-line">
+    <li class="mnx-list-item">
+      <div class="mnx-list-item__text">
+        <span class="mnx-list-item__primary-text">{{transaction.name}}</span>
+        <span class="mnx-list-item__secondary-text">{{transaction.description}}</span>
+      </div>
+
+      <div class="mnx-list-item__trailing credit-debit__color">
+        {{isDebit ? '-' : '+'}}&nbsp;€&nbsp;{{transaction.amount}}
+        <span *ngIf="isCredit" class="mnx-chip mnx-chip--padded">Expenses</span>
+        <span *ngIf="isDebit" class="mnx-chip mnx-chip--padded">Receives</span>
+      </div>
+
+      <button class="mnx-button" (click)="toggleDialog(true)">details</button>
+    </li>
+  </ul>
+</div>
+
+
+<div *ngIf="openDialog" class="mnx-dialog">
+  <div class="mnx-dialog__container">
+    <div class="mnx-dialog__surface">
+      <h2 class="mnx-dialog__title">Details</h2>
+      <section class="mnx-dialog__content">
+        <table style="width:100%">
+          <tr>
+            <td class="table-name">IBAN</td>
+            <td>{{transaction.iban}}</td>
+          </tr>
+
+          <tr>
+            <td class="table-name">Name</td>
+            <td>{{transaction.name}}</td>
+          </tr>
+
+          <tr>
+            <td class="table-name">Amount</td>
+            <td>{{transaction.amount}}</td>
+          </tr>
+
+          <tr>
+            <td class="table-name">Date</td>
+            <td>{{transaction.date}}</td>
+          </tr>
+
+          <tr>
+            <td class="table-name">Description</td>
+            <td>{{transaction.description}}</td>
+          </tr>
+        </table>
+      </section>
+      <footer class="mnx-dialog__actions">
+        <button class="mnx-button mnx-button--raised" (click)="toggleDialog(false)">CLOSE</button>
+      </footer>
+    </div>
+  </div>
+  <div class="mnx-dialog__scrim"></div>
+</div>

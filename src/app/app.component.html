@@ -1,20 +1,43 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="mnx-content">
+  <span class="mnx-grid">
+    <span class="mnx-grid--4">
+      <div class="mnx-typography--caption">Current Balance</div>
+      <div class="mnx-typography--heading1">€&nbsp;--</div>
+    </span>
+    <span class="mnx-grid--4">
+      <div class="mnx-typography--caption">Total Receives</div>
+      <div class="mnx-typography--heading1 debit__color-font">€&nbsp;{{totalReceveievs}}</div>
+    </span>
+    <span class="mnx-grid--4">
+      <div class="mnx-typography--caption">Total Expenses</div>
+      <div class="mnx-typography--heading1 credit__color-font">€&nbsp;{{formatCurrency(totalExpenses)}}</div>
+    </span>
+  </span>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="mnx-content">
+  <span class="mnx-chip-set toolbar--sticky">
+    <span class="mnx-chip mnx-chip--selectable mnx-chip--active transition-filter-chip all" (click)="applyFilter('all')">
+      <span class="filter-color__indicator white"></span>
+      All
+      <span class="filter-count">{{totalItems}}</span>
+    </span>
+
+    <span class="mnx-chip mnx-chip--selectable transition-filter-chip credit" (click)="applyFilter('credit')">
+      <span class="filter-color__indicator credit__color"></span>
+      Expenses
+      <span class="filter-count">{{totalCredit}}</span>
+    </span>
+
+    <span class="mnx-chip mnx-chip--selectable transition-filter-chip debit" (click)="applyFilter('debit')">
+      <span class="filter-color__indicator debit__color"></span>
+      Receives
+      <span class="filter-count">{{totalDebit}}</span>
+    </span>
+  </span>
+
+  <div class="transaction-day" *ngFor="let bankAccount of bankAccounts">
+    <span class="transaction-day__title">{{parseDate(bankAccount.date)}}</span>
+    <transaction *ngFor="let transaction of bankAccount.transactions" [transaction]="transaction" [filter]="appliedFilter"></transaction>
+  </div>
+</div>

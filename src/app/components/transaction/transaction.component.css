@@ -1,0 +1,35 @@
+.transaction {
+    background: #f4f4f5;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.transaction.debit .credit-debit__color {
+    color: #ec5756;
+}
+
+.transaction.credit .credit-debit__color {
+    color: #2bd0a2;
+}
+
+.transaction .mnx-chip {
+    font-size: 11px;
+    padding: 0 8px;
+    height: 23px;
+    margin-left: 16px;
+    border-radius: 4px;
+}
+
+.transaction.credit .mnx-chip {
+    background: rgba(43, 208, 162, .17);
+}
+
+.transaction.debit .mnx-chip {
+    background: rgba(236, 87, 86, .17);
+}
+
+.table-name {
+    color: rgba(0, 0, 0, .54);
+    padding-right: 24px;
+    font-size: 14px;
+}
