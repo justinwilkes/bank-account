@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ITransaction } from 'custom_typings/global';
 
 @Component({
   selector: 'transaction',

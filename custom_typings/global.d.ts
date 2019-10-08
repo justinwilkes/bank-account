@@ -1,10 +1,10 @@
-interface IBalance {
+export interface IBalance {
     amount: number;
     debit_credit: 'debit' | 'credit';
     date: string;
 }
 
-interface IBankAccount {
+export interface IBankAccount {
     id: string;
     iban: string;
     date: string;
@@ -12,7 +12,7 @@ interface IBankAccount {
     transactions: ITransaction[];
 }
 
-interface ITransaction {
+export interface ITransaction {
     iban: string;
     name: string;
     amount: number;

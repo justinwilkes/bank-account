@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { IBankAccount } from 'custom_typings/global';
 
 @Injectable({
   providedIn: 'root'

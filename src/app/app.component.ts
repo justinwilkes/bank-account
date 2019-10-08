@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BankAccountService } from './services/bank-account.service';
 import * as moment from '../../node_modules/moment';
+import { IBankAccount } from 'custom_typings/global';
 
 @Component({
   selector: 'app-root',
